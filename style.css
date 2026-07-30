@@ -1,0 +1,383 @@
+/* =========================
+   ОБЩИЕ НАСТРОЙКИ
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+    background:linear-gradient(180deg,#0b1026,#1d1b4d,#ff9acb);
+    color:white;
+    min-height:100vh;
+}
+
+/* =========================
+      ЗВЁЗДНОЕ НЕБО
+========================= */
+
+#stars{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 10px white;
+    animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+
+0%{
+opacity:.2;
+transform:scale(.6);
+}
+
+50%{
+opacity:1;
+transform:scale(1.4);
+}
+
+100%{
+opacity:.2;
+transform:scale(.6);
+}
+
+}
+
+/* =========================
+       ПЕРВЫЙ ЭКРАН
+========================= */
+
+.welcome{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.welcome h2{
+    font-size:48px;
+    font-family:'Marck Script',cursive;
+    margin-bottom:20px;
+    text-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+.welcome p{
+    font-size:22px;
+    opacity:.9;
+}
+
+/* =========================
+     ПОДАРОЧНАЯ КОРОБКА
+========================= */
+
+.gift{
+    width:180px;
+    height:180px;
+    position:relative;
+    margin-top:70px;
+    cursor:pointer;
+    transition:.5s;
+}
+
+.gift:hover{
+    transform:scale(1.08) rotate(-3deg);
+}
+
+.box{
+    position:absolute;
+    bottom:0;
+    width:180px;
+    height:120px;
+    background:#ff4f93;
+    border-radius:0 0 20px 20px;
+}
+
+.lid{
+    position:absolute;
+    width:190px;
+    height:45px;
+    background:#ff6ba7;
+    left:-5px;
+    top:25px;
+    border-radius:12px;
+    transition:.8s;
+}
+
+.gift:hover .lid{
+    transform:rotate(-10deg) translateY(-6px);
+}
+
+.ribbonV{
+    position:absolute;
+    width:24px;
+    height:170px;
+    left:78px;
+    background:#fff;
+}
+
+.ribbonH{
+    position:absolute;
+    width:180px;
+    height:22px;
+    top:70px;
+    background:#fff;
+}
+
+/* =========================
+          СЕКЦИИ
+========================= */
+
+section{
+    padding:90px 20px;
+}
+
+.hidden{
+    display:none;
+}
+
+button{
+
+background:white;
+
+color:#ff4b92;
+
+border:none;
+
+padding:18px 45px;
+
+margin-top:40px;
+
+font-size:20px;
+
+border-radius:50px;
+
+cursor:pointer;
+
+transition:.3s;
+
+font-weight:bold;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 25px rgba(255,255,255,.5);
+
+}
+
+/* =========================
+         ПИСЬМО
+========================= */
+
+.letter{
+
+max-width:850px;
+
+margin:auto;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+padding:50px;
+
+border-radius:30px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+text-align:center;
+
+}
+
+.letter h1{
+
+font-size:65px;
+
+margin-bottom:20px;
+
+}
+
+.letter h2{
+
+font-size:42px;
+
+font-family:'Marck Script',cursive;
+
+margin-bottom:30px;
+
+}
+
+.letter p{
+
+line-height:2;
+
+font-size:21px;
+
+}
+
+/* =========================
+        ГАЛЕРЕЯ
+========================= */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.photo{
+
+height:260px;
+
+background:rgba(255,255,255,.15);
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:24px;
+
+transition:.4s;
+
+border:3px solid rgba(255,255,255,.25);
+
+}
+
+.photo:hover{
+
+transform:translateY(-10px) scale(1.03);
+
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:22px;
+    display:block;
+}
+
+/* =========================
+        КАРТОЧКИ
+========================= */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.15);
+
+padding:30px;
+
+border-radius:20px;
+
+font-size:20px;
+
+transition:.4s;
+
+backdrop-filter:blur(10px);
+
+}
+
+.card:hover{
+
+transform:scale(1.05);
+
+}
+
+/* =========================
+        ВИДЕО
+========================= */
+
+video{
+
+width:100%;
+
+max-width:850px;
+margin-top:40px;
+
+border-radius:20px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+}
+
+/* =========================
+      АДАПТИВНОСТЬ
+========================= */
+
+@media(max-width:768px){
+
+.welcome h2{
+
+font-size:34px;
+
+}
+
+.letter{
+
+padding:30px;
+
+}
+
+.letter h2{
+
+font-size:32px;
+
+}
+
+.letter p{
+
+font-size:18px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
